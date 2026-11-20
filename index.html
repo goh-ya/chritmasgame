@@ -31,7 +31,7 @@ button{font:inherit;color:inherit}
 .hero{padding-block:clamp(22px,4.5vw,48px) 20px;text-align:center}
 .eyebrow{font-family:var(--en);letter-spacing:.16em;font-size:clamp(14px,2vw,18px);color:var(--sub);margin:0}
 .ttl{display:block;width:min(780px,96%);height:auto;margin:6px auto 0;overflow:visible}
-.ttl text{font-family:var(--hand);fill:var(--ink);stroke:var(--ink);stroke-width:2.2;stroke-linejoin:round;stroke-dasharray:4000;animation:draw 2.4s var(--ease) both}
+.ttl text{font-family:var(--hand);fill:var(--ink);stroke:var(--ink);stroke-width:1.5;stroke-linejoin:round;stroke-dasharray:4000;animation:draw 2.4s var(--ease) both}
 @keyframes draw{from{stroke-dashoffset:4000;fill-opacity:0}55%{fill-opacity:0}to{stroke-dashoffset:0;fill-opacity:1}}
 .ensub{font-family:var(--en);font-size:clamp(20px,3.6vw,36px);letter-spacing:.08em;margin:2px 0 0;animation:fade .8s 1.6s both}
 .lede{color:var(--sub);max-width:34em;margin:10px auto 0;font-size:clamp(14px,1.8vw,17px);animation:fade .8s 1.8s both}
@@ -171,6 +171,16 @@ svg[data-mood=idle] .m-idle,svg[data-mood=active] .m-active,svg[data-mood=happy]
  .stage .cast { padding-top: 0px;}
  .stage { margin-top: 0px;}
  .tray {margin-top: 0px;}
+ .cap { position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(242,240,237,0.8); backdrop-filter: blur(4px);}
+  .ctl { position: sticky;
+    bottom: 0;
+    z-index: 100;
+    background: rgb(242, 240, 237, 0.8);
+    padding: 16px 4px;
+    backdrop-filter: blur(4px); }
 }
 @media (prefers-reduced-motion:reduce){
  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
@@ -179,16 +189,18 @@ svg[data-mood=idle] .m-idle,svg[data-mood=active] .m-active,svg[data-mood=happy]
 <header class="top"><div class="in"><a href="#top">CHRISTMAS GIFT GAME</a><a href="#play">2026 ✶ HOW TO PLAY</a></div></header>
 
 <main id="top">
-<section class="hero"><div class="in">
+<section class="hero">
+  <div class="in">
   <p class="ensub">2026 THE GIFT STEALING GAME</p>
   <h1 class="sr">聖誕零元購</h1>
   <svg class="ttl" viewBox="0 0 800 190" aria-hidden="true"><text x="400" y="150" text-anchor="middle" font-size="156">聖誕零元購</text></svg>
 
-
   <h2 class="sr">MEET THE PLAYERS</h2>
   <div class="cast" id="heroCast"></div>
   <a class="cue" href="#play"> SCROLL TO PLAY <span>↓</span></a>
-</div></section>
+  </div>
+</section>
+
 
 <section class="play" id="play"><div class="in">
   <div class="cap" id="cap" aria-live="polite">
